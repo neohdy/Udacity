@@ -1,2 +1,1 @@
-# hellow-world
-first GH project
+# Traffic Sign Classifier Project
