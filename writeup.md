@@ -17,18 +17,16 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 [image1]: ./Distribution.jpg "Distribution"
+[image2]: ./rotation.jpg "rotation"
+[image3]: ./architecture.jpg "architecture"
 
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
-
-### Writeup / README
-
 here is my [project code]
 
 ### Data Set Summary & Exploration
-
 
 The data set consists of tens of thousands 32x32 pictures of German traffic signs. The original size of the data set is shown below:
 * The size of training set is 34799
@@ -39,5 +37,43 @@ The data set consists of tens of thousands 32x32 pictures of German traffic sign
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data...
 
 ![alt text][image1]
+
+In order to make the data more diverse, some pre-process methods are applied. Firstly, for the aim of eliminate the influence of  color, the pictures are all transformed into gray scale from RGB scale. Then the normalization process is used by (pixel - 128)/ 128. And finally, some more data are added into the training set which are randomly rotated for some degree. 
+After the process, the new size of the training data is 35164 and the shape of a image is 32x32x1.
+Pictures compared the original with the processed one are shown below.
+
+![alt text][image2]
+
+### Design and Test a Model Architecture
+The architecture of the model is modified refered to the *'Traffic Sign Recognition with Multi-Scale Convolutional Networks'* by Pierre Semanet and Yann LeCun, which has the architecture as below.
+![alt text][image3]
+
+The final model consisted of the following layers:
+
+| Layer         		|     Description	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| 32x32x3 RGB image   							| 
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  valid padding, outputs 14x14x6 				|
+| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16      									|
+| RELU           |   |
+| Max pooling | 2x2 stride, valid padding, outputs 5x5x16|
+| Flatten | output 400|
+|Convolution 5x5 | 1x1 stride, valid padding, outputs 1x1x400|
+|RELU| |
+| Flatten | output 400|
+|Layer2flat | output 800 |
+|dropout| |
+| Fully connected		| output 43|
+
+### Training process
+
+To train the model, I used the Adam optimizer and the batch size is 128. Epoches is   .
+
+### Results and Tuning process
+
+As for the learning rate, it draws my attention that if the learning rate is too large, for example 0.01, then the accuracy will decrease dramaticly to 0.054 and remain around 0.05 while the learning is changed to 0.001, the accuracy will return to the normal value. This shows that the learning rate is quite important for the performance of the model. 
+
 
 
