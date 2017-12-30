@@ -75,5 +75,28 @@ To train the model, I used the Adam optimizer and the batch size is 128. Epoches
 
 As for the learning rate, it draws my attention that if the learning rate is too large, for example 0.01, then the accuracy will decrease dramaticly to 0.054 and remain around 0.05 while the learning is changed to 0.001, the accuracy will return to the normal value. This shows that the learning rate is quite important for the performance of the model. 
 
+In traditional ConvNets, the output of the last stage is fed to a classifier. In the present work the outputs of all the stages are fed to the classifier. This allows the classifier to use, not just high-level features, which tend to be global, invariant, but with little precise details, but also pooled low- level features, which tend to be more local, less invariant, and more accurately encode local motifs.
+
+
+### Test the model on new images
+
+The results are shown below.
+
+
+
+Here are the results of the prediction:
+
+| Image			        |     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Stop Sign      		| Stop sign   									| 
+| U-turn     			| U-turn 										|
+| Yield					| Yield											|
+| 100 km/h	      		| Bumpy Road					 				|
+| Slippery Road			| Slippery Road      							|
+
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+
+
+For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
 
