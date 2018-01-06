@@ -19,7 +19,8 @@ The goals / steps of this project are the following:
 [image1]: ./Distribution.jpg "Distribution"
 [image2]: ./rotation.jpg "rotation"
 [image3]: ./architecture.jpg "architecture"
-
+[image4]: ./Accuracy_curve_LeNetnew_20ep.jpg "curve"
+[image5]: ./Testresult.jpg "result"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -69,7 +70,11 @@ The final model consisted of the following layers:
 
 ### Training process
 
-To train the model, I used the Adam optimizer and the batch size is 128. Epoches is   .
+To train the model, I used the Adam optimizer and the batch size is 128. Epoches is 20.
+The change of the loss and accuracy of the training and validation data are shown below.
+![alt text][image4]
+As can be seen, 
+
 
 ### Results and Tuning process
 
@@ -78,10 +83,12 @@ As for the learning rate, it draws my attention that if the learning rate is too
 In traditional ConvNets, the output of the last stage is fed to a classifier. In the present work the outputs of all the stages are fed to the classifier. This allows the classifier to use, not just high-level features, which tend to be global, invariant, but with little precise details, but also pooled low- level features, which tend to be more local, less invariant, and more accurately encode local motifs.
 
 
+
+
 ### Test the model on new images
 
 The results are shown below.
-
+![alt text][image5]
 
 
 Here are the results of the prediction:
