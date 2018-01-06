@@ -20,7 +20,10 @@ The goals / steps of this project are the following:
 [image2]: ./rotation.jpg "rotation"
 [image3]: ./architecture.jpg "architecture"
 [image4]: ./Accuracy_curve_LeNetnew_20ep.jpg "curve"
-[image5]: ./Testresult.jpg "result"
+[image5]: ./Accuracy_LeNetnew_normalized_20ep.jpg "curve2"
+[image6]: ./Testresult.jpg "result"
+
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -72,15 +75,18 @@ The final model consisted of the following layers:
 
 To train the model, I used the Adam optimizer and the batch size is 128. Epoches is 20.
 The change of the loss and accuracy of the training and validation data are shown below.
-![alt text][image4]
+![alt text][image5]
 
 ### Results and Tuning process
-Firstly, the pre-process is tested by compare the pre-processed data and the original data. The result is shown below.The final training and validation accuracy of each one is:
+Firstly, the pre-process is tested by compare the pre-processed data and the original data. The result is shown below.
+![alt text][image4]
+![alt text][image5]
+The final training and validation accuracy of each one is:
 
 |          		|     training accuracy  					| validation accuracy |
 |:---------------------:|:---------------------------------------------:|:----:| 
-|      Processed data     		| 0.868	| 
-| Original data    	|   0.927 |
+|      Processed data   | 0.989 		| 0.868	| 
+| Original data    	| 0.999   |0.927 |
 
 
 As can be seen, using the same model and epoches, the processed data can have a much better performance which has a faster convergence speed and can achieve higher accuracy. This means that the pre-process does play an important role of the deep learning method. 
