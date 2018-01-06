@@ -85,8 +85,8 @@ The final training and validation accuracy of each one is:
 
 |          		|     training accuracy  					| validation accuracy |
 |:---------------------:|:---------------------------------------------:|:----:| 
-|      Processed data   | 0.989 		| 0.868	| 
-| Original data    	| 0.999   |0.927 |
+|      Original data   | 0.989 		| 0.868	| 
+| processed data    	| 0.999   |0.927 |
 
 
 As can be seen, using the same model and epoches, the processed data can have a much better performance which has a faster convergence speed and can achieve higher accuracy. This means that the pre-process does play an important role of the deep learning method. 
@@ -98,7 +98,7 @@ In traditional ConvNets, the output of the last stage is fed to a classifier. In
 
 ### Test the model on new images
 
-The results are shown below.
+The results are shown below, which chooses 5 pictures randomly and the probability of each are shown as well. 
 ![alt text][image5]
 
 
