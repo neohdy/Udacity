@@ -73,16 +73,21 @@ The final model consisted of the following layers:
 To train the model, I used the Adam optimizer and the batch size is 128. Epoches is 20.
 The change of the loss and accuracy of the training and validation data are shown below.
 ![alt text][image4]
-As can be seen, 
-
 
 ### Results and Tuning process
+Firstly, the pre-process is tested by compare the pre-processed data and the original data. The result is shown below.The final training and validation accuracy of each one is:
+
+|          		|     training accuracy  					| validation accuracy |
+|:---------------------:|:---------------------------------------------:|:----:| 
+|      Processed data     		| 0.868	| 
+| Original data    	|   0.927 |
+
+
+As can be seen, using the same model and epoches, the processed data can have a much better performance which has a faster convergence speed and can achieve higher accuracy. This means that the pre-process does play an important role of the deep learning method. 
 
 As for the learning rate, it draws my attention that if the learning rate is too large, for example 0.01, then the accuracy will decrease dramaticly to 0.054 and remain around 0.05 while the learning is changed to 0.001, the accuracy will return to the normal value. This shows that the learning rate is quite important for the performance of the model. 
 
 In traditional ConvNets, the output of the last stage is fed to a classifier. In the present work the outputs of all the stages are fed to the classifier. This allows the classifier to use, not just high-level features, which tend to be global, invariant, but with little precise details, but also pooled low- level features, which tend to be more local, less invariant, and more accurately encode local motifs.
-
-
 
 
 ### Test the model on new images
