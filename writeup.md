@@ -75,6 +75,7 @@ The final model consisted of the following layers:
 
 To train the model, I used the Adam optimizer and the batch size is 128. Epoches is 20.
 The change of the loss and accuracy of the training and validation data are shown below.
+
 ![alt text][image5]
 
 ### Results and Tuning process
@@ -99,22 +100,7 @@ In traditional ConvNets, the output of the last stage is fed to a classifier. In
 ### Test the model on new images
 
 The results are shown below, which chooses 5 pictures randomly and the probability of each are shown as well. 
-![alt text][image5]
+![alt text][image6]
 
-
-Here are the results of the prediction:
-
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
-
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
-
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
+For the 5 pictures shown below, they are all predicted correctly, while the accuracy of the total test data is 0.926.
 
